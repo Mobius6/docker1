@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  drupal:
+    image: drupal
+    ports:
+      - "8080:80"
+    volumes:
+      - drupal-themes:/var/www/html/themes
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=mypasswd
+volumes:
+  drupal-themes:
